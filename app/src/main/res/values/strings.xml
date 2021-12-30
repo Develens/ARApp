@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AR App</string>
+
+    <string name="directions_base_url">https://maps.googleapis.com/</string>
+
+    <string name="google_maps_key">AIzaSyDlyiR8-zmsCFNgfzws-Tgp3nFUYOdTduA</string>
+
+
+    <string name="permission_rationale">Please grant location permission to start the service</string>
+    <string name="permission_denied_explanation">You have not granted location permission. So the service cannot be started.</string>
+    <string name="settings">settings</string>
+
+    <string name="restaurant">restaurant</string>
+
+    <string name="point_of_interest">point_of_interest</string>
+
+
+</resources>

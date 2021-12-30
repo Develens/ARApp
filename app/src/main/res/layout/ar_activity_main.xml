@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <FrameLayout
+        android:id="@+id/camera_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/infl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:id="@+id/infl2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/tv_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingTop="20dp"
+        android:text="GPS is loading..."
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:minHeight="?attr/actionBarSize"
+
+        app:titleTextColor="@android:color/white">
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:id="@+id/radiusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rel_leftright"
+            android:layout_centerVertical="true"
+            android:layout_margin="10dp">
+
+            <ImageView
+                android:id="@+id/right_side"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_leftarrow"
+                android:layout_alignParentEnd="true"/>
+
+            <ImageView
+                android:id="@+id/left_side"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/ic_rightarrow" />
+
+        </RelativeLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <LinearLayout
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/dv"
+                    android:text="UP"
+                    android:textColor="@color/colorPrimary"
+
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/dv"
+                    android:layout_width="0.1dp"
+                    android:layout_height="0.1dp"
+                    android:layout_centerHorizontal="true" />
+                <Button
+                    android:id="@+id/btnDown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/dv"
+                    android:text="Down"
+                    android:textColor="@color/colorPrimary"
+
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="1 Km" />
+
+                <TextView
+                    android:id="@+id/txtDistanceFilter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Test"
+
+                    android:textColor="@color/colorAccent" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:text="60 Km" />
+
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/filterDistance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="29"
+               />
+
+        </LinearLayout>
+
+     <!--   <ImageView
+            android:id="@+id/imageViewCompass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHeading"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/circletrans"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/compass" />-->
+
+
+        <include
+            layout="@layout/toolbar_arview"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+
+            android:layout_height="wrap_content"/>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="0dp"
+
+            android:background="@drawable/rad"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:orientation="horizontal"></LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>
